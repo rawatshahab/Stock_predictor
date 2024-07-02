@@ -7,7 +7,7 @@ from keras.models import load_model
 import streamlit as st
 
 st.title('Stock trend prediction')
-data = pd.read_csv("C:/Users/rohit/Downloads/Google_train_data.csv")
+data = pd.read_csv("Google_train_data.csv")
 data.head()
 
 #describing data
@@ -62,7 +62,7 @@ y_train = np.array(y_train)
 model=load_model('model.h5')
 
 #testing data
-testData = pd.read_csv("C:/Users/rohit/Downloads/Google_test_data.csv")
+testData = pd.read_csv("Google_test_data.csv")
 testData["Close"]=pd.to_numeric(testData.Close,errors='coerce') #to change 'close' Datatype
 testData= testData.dropna() #to drop any missing values
 testData= testData.iloc[:,4:5] #to use only 'close' column to train the testData
